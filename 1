@@ -1,0 +1,40 @@
+//https://www.codechef.com/viewsolution/47222220 ====> question
+
+#include<iostream>
+using namespace std;
+int main()
+{
+    int t;
+    cin>>t;
+    while(t--)
+    {
+        int a,b,c,d,k;
+        cin>>a>>b>>c>>d>>k;
+        int y = (c-a)+(d-b);//// take (a,b)=(3,2) and (c,d)=(2,4)// we get 1 but if we use abs function like y = abs(c-a)+abs(d-b) we get 3;
+        if(y<0)
+        {
+            y *= -1;
+        }
+        if(y==k)
+        {
+            cout<<"YES"<<"\n";
+        }
+        if(y>k)
+        {
+            cout<<"NO"<<"\n";
+        }
+        if(y<k)
+        {
+            int x = k-y;
+            if(x%2==0)
+            {
+                cout<<"YES"<<"\n";
+            }
+            else
+            {
+                cout<<"NO"<<"\n";
+            }
+        }
+    }
+    return 0;
+}
